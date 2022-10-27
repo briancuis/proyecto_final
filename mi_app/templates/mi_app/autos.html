@@ -1,0 +1,10 @@
+{% extends 'mi_app/base_autos.html' %}
+{% block titulo%} Lista de Autos {% endblock %}
+{% block contenido %}
+
+    {% for auto in lista_Autos %}
+        <ul>
+            <li> Modelo: {{auto.modelo}}, Marca: {{auto.marca}}, año: {{auto.año}} </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

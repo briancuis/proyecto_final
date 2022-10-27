@@ -1,0 +1,15 @@
+{% extends 'mi_app/base_autos.html' %}
+{% block titulo%} Buscar Autos {% endblock %}
+{% block contenido %}
+      <form action="/autos/buscar" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+      </form>
+
+      {% for auto in lista_Autos %}
+      <ul>
+          <li> Modelo: {{auto.modelo}}, Marca: {{auto.marca}}, Año: {{auto.año}}</li>
+      </ul>
+      {% endfor %}
+{% endblock %}

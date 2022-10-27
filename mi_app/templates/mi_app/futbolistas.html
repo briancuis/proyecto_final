@@ -1,0 +1,10 @@
+{% extends 'mi_app/base.html' %}
+{% block titulo%} Lista de Futbolistas {% endblock %}
+{% block contenido %}
+
+    {% for futbolista in lista_futbolistas %}
+        <ul>
+            <li> Nombre: {{futbolista.nombre}}, Edad: {{futbolista.edad}}, equipo: {{futbolista.equipo}} </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

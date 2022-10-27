@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>FAMILIARES</h1>
-
-    {% for familiares in lista_familiares %}
-    <ul>
-        <li> Nombre: {{familiares.nombre}}, direccion: {{familiares.direccion}}, edad: {{familiares.edad}} </li>
-    </ul>
-    {% endfor %}    
-
-</body>
-</html>
+{% extends 'mi_app/base.html' %}
+{% block titulo%} Lista de todos mis Familiares {% endblock %}
+{% block contenido %}
+  {% for familiar in lista_familiares %}
+      <ul>
+          <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}</li>
+      </ul>
+  {% endfor %}
+{% endblock %}

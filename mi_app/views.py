@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from mi_app.models import familiares, futbolista
-from mi_app.forms import Buscar, FamiliarForm, FutbolistaForm
+from mi_app.models import familiares
+from mi_app.forms import Buscar, FamiliarForm
 from django.views import View
 # Create your views here.
 
@@ -17,10 +17,6 @@ def mostrar_familiares(request):
     lista_familiares = familiares.objects.all()
     return render(request, "mi_app/familiares.html", 
                 {"lista_familiares": lista_familiares})
-
-def mostrar_futbolistas(request):
-    lista_jugadores = futbolista.objects.all()
-    return render(request, "mi_app/f")
 
 class BuscarFamiliar(View):
 
@@ -65,5 +61,3 @@ class AltaFamiliar(View):
         
         return render(request, self.template_name, {"form": form})
 
-class Futbolista(View):
-    form_class = FutbolistaForm

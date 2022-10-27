@@ -1,5 +1,5 @@
 from django import forms
-from mi_app.models import familiares, futbolista
+from mi_app.models import familiares
 
 class Buscar(forms.Form):
     nombre = forms.CharField(max_length=100)
@@ -10,7 +10,3 @@ class FamiliarForm(forms.ModelForm):
     fields = ['nombre', 'direccion', 'edad']
 
 
-class FutbolistaForm(forms.ModelForm):
-  class Meta:
-    model = futbolista
-    fields = ['nombre', 'edad', 'equipo']
